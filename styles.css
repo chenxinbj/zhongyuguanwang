@@ -225,6 +225,7 @@ img.brand-mark {
 
 .hero .eyebrow {
   color: var(--lime);
+  font-size: clamp(22px, 2.6vw, 32px);
 }
 
 h1,
@@ -263,8 +264,15 @@ p {
 
 .hero-copy {
   max-width: 800px;
-  color: rgba(255, 255, 255, 0.84);
+  color: rgba(255, 255, 255, 0.88);
   font-size: clamp(17px, 2vw, 22px);
+}
+
+.hero-slogan {
+  margin-top: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: clamp(13px, 1.2vw, 16px);
+  font-style: italic;
 }
 
 .hero-actions {
@@ -877,26 +885,78 @@ p {
   color: var(--ink);
 }
 
-.about-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+.biz-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
 }
 
-.about-tag {
-  padding: 10px 20px;
-  border-radius: 8px;
+.biz-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 16px 12px;
+  border-radius: 10px;
   background: white;
   border: 1px solid var(--line);
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--deep);
   box-shadow: 0 2px 8px rgba(26, 82, 118, 0.04);
   transition: all 0.2s ease;
 }
 
-.about-tag:hover {
+.biz-card:hover {
   border-color: var(--sea);
+  box-shadow: 0 4px 16px rgba(52, 152, 219, 0.12);
+}
+
+.biz-card--wide {
+  grid-column: span 2;
+  padding: 16px 24px;
+}
+
+.biz-wide-layout {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.biz-wide-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.biz-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.12), rgba(93, 173, 226, 0.08));
+  color: var(--sea);
+}
+
+.biz-card strong {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.biz-sub-grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 4px 20px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
   box-shadow: 0 4px 16px rgba(52, 152, 219, 0.12);
   transform: translateY(-2px);
 }
@@ -1316,49 +1376,45 @@ p {
 
 .cooperation-layout {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1.1fr 0.9fr;
   gap: 32px;
-  align-items: end;
+  align-items: stretch;
 }
 
 .cooperation-aside {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
+  overflow-y: auto;
 }
 
 .coop-note {
   color: var(--muted);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
 }
 
 .cooperation-list {
   display: grid;
-  gap: 12px;
+  gap: 8px;
 }
 
 .cooperation-item {
-  padding: 16px 20px;
-  border-left: 4px solid var(--sea);
-  border-radius: 8px;
+  padding: 10px 16px;
+  border-left: 3px solid var(--sea);
+  border-radius: 6px;
   background: white;
-  box-shadow: 0 2px 12px rgba(26, 82, 118, 0.06);
+  box-shadow: 0 1px 6px rgba(26, 82, 118, 0.05);
   transition: box-shadow 0.2s ease-out;
 }
 
 .cooperation-item:hover {
-  box-shadow: 0 6px 20px rgba(26, 82, 118, 0.1);
+  box-shadow: 0 4px 14px rgba(26, 82, 118, 0.1);
 }
 
 .cooperation-item h3 {
-  font-size: 16px;
-  margin-bottom: 4px;
-}
-
-.cooperation-item p {
-  margin: 0;
   font-size: 14px;
+  margin-bottom: 0;
 }
 
 .cooperation-card {
